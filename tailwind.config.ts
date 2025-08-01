@@ -102,7 +102,9 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-modern': 'var(--gradient-modern)',
+				'gradient-overlay': 'var(--gradient-overlay)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',

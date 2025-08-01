@@ -8,8 +8,15 @@ export const HeroSection = () => {
   const specialties = ["A Brand & Marketing", "SEO", "Digital Marketing"];
 
   return (
-    <section className="min-h-screen bg-gradient-hero flex items-center justify-center px-4 py-20 relative overflow-hidden">
-      <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen bg-gradient-modern relative overflow-hidden">
+      {/* Modern Background Elements */}
+      <div className="absolute inset-0 bg-gradient-overlay"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent-blue/10 rounded-full blur-xl"></div>
+      <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-accent-purple/10 rounded-full blur-lg"></div>
+      
+      <div className="relative z-10 flex items-center justify-center px-4 py-20">
+        <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <div className="space-y-8 animate-fade-up">
           <div className="space-y-4">
@@ -73,25 +80,34 @@ export const HeroSection = () => {
               ⭐ Brand
             </FloatingBadge>
             
-            <FloatingBadge className="bottom-32 -left-12" animationDelay="2s">
+            <FloatingBadge className="bottom-40 -left-16" animationDelay="2s">
               🎯 Ads
             </FloatingBadge>
             
             <FloatingBadge className="bottom-8 -right-8" animationDelay="0.5s">
               📱 Social Media
             </FloatingBadge>
+            
+            <FloatingBadge className="top-1/2 -left-20" animationDelay="1.5s">
+              💼 Strategy
+            </FloatingBadge>
+            
+            <FloatingBadge className="bottom-20 right-12" animationDelay="2.5s">
+              🚀 Growth
+            </FloatingBadge>
           </div>
           
           {/* Experience Badge */}
-          <div className="absolute -bottom-8 right-0 bg-white rounded-lg p-6 shadow-float border border-border">
+          <div className="absolute -bottom-8 right-0 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-glow border border-white/20">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">2 Years</div>
+              <div className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">2 Years</div>
               <div className="text-sm text-muted-foreground">in Brand & Marketing</div>
               <div className="text-sm text-muted-foreground">Experience</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </section>
   );
 };
