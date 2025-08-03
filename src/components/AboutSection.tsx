@@ -1,6 +1,117 @@
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export const AboutSection = () => {
+  const [activeTab, setActiveTab] = useState("myself");
+
+  const tabs = [
+    { id: "myself", label: "My Self" },
+    { id: "education", label: "Education" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Experience" }
+  ];
+
+  const renderTabContent = () => {
+    switch(activeTab) {
+      case "myself":
+        return (
+          <div className="space-y-4">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I'm a passionate digital marketing professional with 15 years of experience helping brands 
+              achieve their online goals. I specialize in creating comprehensive strategies that drive 
+              real business results.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div><strong>Name:</strong> Marketing Expert</div>
+              <div><strong>Location:</strong> Global Remote</div>
+              <div><strong>Email:</strong> hello@expert.com</div>
+              <div><strong>Phone:</strong> +1 (555) 123-4567</div>
+            </div>
+          </div>
+        );
+      case "education":
+        return (
+          <div className="space-y-4">
+            <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border/50">
+              <div className="text-sm text-primary font-medium">(2001-2010)</div>
+              <h4 className="font-semibold text-card-foreground">Education Prose</h4>
+              <p className="text-sm text-muted-foreground">Stellar Learning Academy</p>
+            </div>
+            <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border/50">
+              <div className="text-sm text-secondary font-medium">(2012-2015)</div>
+              <h4 className="font-semibold text-card-foreground">IT Consultation</h4>
+              <p className="text-sm text-muted-foreground">Envato Inc.</p>
+            </div>
+          </div>
+        );
+      case "skills":
+        return (
+          <div className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">SEO & Analytics</span>
+                    <span className="text-sm text-muted-foreground">95%</span>
+                  </div>
+                  <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="bg-primary h-2 rounded-full" style={{width: '95%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Social Media Marketing</span>
+                    <span className="text-sm text-muted-foreground">90%</span>
+                  </div>
+                  <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="bg-primary h-2 rounded-full" style={{width: '90%'}}></div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Content Strategy</span>
+                    <span className="text-sm text-muted-foreground">88%</span>
+                  </div>
+                  <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="bg-primary h-2 rounded-full" style={{width: '88%'}}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm font-medium">Brand Development</span>
+                    <span className="text-sm text-muted-foreground">92%</span>
+                  </div>
+                  <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="bg-primary h-2 rounded-full" style={{width: '92%'}}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "experience":
+        return (
+          <div className="space-y-4">
+            <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border/50">
+              <div className="text-sm text-primary font-medium">(2015-2018)</div>
+              <h4 className="font-semibold text-card-foreground">SEO Specialist</h4>
+              <p className="text-sm text-muted-foreground">Upwork Inc.</p>
+              <p className="text-sm mt-2">Led SEO strategies for 50+ clients, achieving 300% average organic traffic growth.</p>
+            </div>
+            <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border/50">
+              <div className="text-sm text-secondary font-medium">2024 At Present</div>
+              <h4 className="font-semibold text-card-foreground">Content Strategist</h4>
+              <p className="text-sm text-muted-foreground">Freelancer.com</p>
+              <p className="text-sm mt-2">Managing comprehensive digital marketing campaigns for enterprise clients worldwide.</p>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
   return (
     <section className="py-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background relative overflow-hidden">
       {/* Animated background elements */}
@@ -66,7 +177,7 @@ export const AboutSection = () => {
           {/* Content Side */}
           <div className="space-y-6">
             <div className="inline-block bg-gradient-to-r from-primary/20 to-secondary/20 text-primary px-4 py-2 rounded-full text-sm font-medium">
-              ABOUT ME
+              ABOUT
             </div>
             
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
@@ -75,24 +186,26 @@ export const AboutSection = () => {
               at a Time
             </h2>
             
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              With 15 years of experience in digital marketing and brand strategy, I help businesses 
-              transform their online presence into powerful growth engines. From SEO optimization 
-              to complete digital transformations.
-            </p>
+            {/* Navigation Tabs */}
+            <div className="flex flex-wrap gap-2 my-6">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-to-r from-orange-400 to-orange-500 text-white shadow-soft'
+                      : 'bg-card/50 text-muted-foreground hover:bg-primary/10 hover:text-primary border border-border/50'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
 
-            {/* Experience timeline */}
-            <div className="grid md:grid-cols-2 gap-4 mt-8">
-              <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border/50">
-                <div className="text-sm text-primary font-medium">(2015-2018)</div>
-                <h4 className="font-semibold text-card-foreground">SEO Specialist</h4>
-                <p className="text-sm text-muted-foreground">Digital Agency Inc.</p>
-              </div>
-              <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border/50">
-                <div className="text-sm text-secondary font-medium">2024 At Present</div>
-                <h4 className="font-semibold text-card-foreground">Content Strategist</h4>
-                <p className="text-sm text-muted-foreground">Freelancer.com</p>
-              </div>
+            {/* Tab Content */}
+            <div className="bg-card/30 backdrop-blur-sm rounded-lg p-6 border border-border/50 min-h-[200px]">
+              {renderTabContent()}
             </div>
 
             <div className="flex gap-4 pt-4">
