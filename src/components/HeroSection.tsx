@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FloatingBadge } from "./FloatingBadge";
 import { AnimatedText } from "./AnimatedText";
+import { Link } from "react-router-dom";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 
 export const HeroSection = () => {
@@ -47,9 +48,11 @@ export const HeroSection = () => {
           </div>
           
           <div className="flex flex-wrap gap-4">
-            <Button variant="portfolio" size="lg">
-              Portfolio 📁
-            </Button>
+            <Link to="/about">
+              <Button variant="portfolio" size="lg">
+                Portfolio 📁
+              </Button>
+            </Link>
             <Button variant="outline-dark" size="lg">
               Hire me
             </Button>
