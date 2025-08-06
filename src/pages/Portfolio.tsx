@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Instagram, Facebook, Twitter, Linkedin, Youtube, TrendingUp, Users, Heart, MessageSquare, Share2, BarChart3, Target, Camera, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const projects = [
@@ -208,9 +209,11 @@ const Portfolio = () => {
                       ))}
                     </div>
 
-                    <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      View Case Study
-                    </Button>
+                    <Link to="/case-study">
+                      <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        View Case Study
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
