@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Instagram, Facebook, Twitter, Linkedin, Youtube, TrendingUp, Users, Heart, MessageSquare, Share2, BarChart3, Target, Camera, Zap } from "lucide-react";
+import { Instagram, Facebook, Twitter, Linkedin, Youtube, TrendingUp, Users, Heart, MessageSquare, Share2, BarChart3, Target, Camera, Zap, Eye, Search, ShoppingCart, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Portfolio = () => {
@@ -221,8 +221,149 @@ const Portfolio = () => {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Featured Case Studies */}
         <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Case Studies</span>
+            </h2>
+            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+              Deep dive into our most successful campaigns and see the strategies that delivered exceptional results.
+            </p>
+            
+            <div className="max-w-6xl mx-auto space-y-8">
+              {/* Social Media Case Study */}
+              <Card className="overflow-hidden">
+                <div className="md:flex">
+                  <div className="md:w-1/3 bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-8 flex items-center justify-center">
+                    <Instagram size={64} className="text-pink-500" />
+                  </div>
+                  <div className="md:w-2/3 p-8">
+                    <Badge variant="secondary" className="mb-4">Social Media Case Study</Badge>
+                    <h3 className="text-2xl font-bold mb-3">Fashion Brand Instagram Growth</h3>
+                    <p className="text-muted-foreground mb-4">
+                      How we grew a fashion brand from 5K to 52K followers and increased sales by 250% 
+                      in just 6 months through strategic Instagram marketing.
+                    </p>
+                    <div className="flex flex-wrap gap-4 mb-6">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">+900%</div>
+                        <div className="text-sm text-muted-foreground">Follower Growth</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">+250%</div>
+                        <div className="text-sm text-muted-foreground">Sales Increase</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">7.3%</div>
+                        <div className="text-sm text-muted-foreground">Engagement Rate</div>
+                      </div>
+                    </div>
+                    <Link to="/case-study">
+                      <Button className="gap-2">
+                        <Eye size={16} />
+                        View Case Study
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </Card>
+
+              {/* SEO Case Studies Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <Card className="overflow-hidden">
+                  <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 p-6 text-center">
+                    <Search size={48} className="text-blue-600 mx-auto mb-4" />
+                    <Badge variant="secondary" className="mb-2">SEO Case Study</Badge>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3">B2B Tech SEO</h3>
+                    <p className="text-muted-foreground mb-4 text-sm">
+                      704% organic traffic increase for a B2B technology company through technical SEO optimization.
+                    </p>
+                    <div className="flex justify-between items-center mb-4">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">+704%</div>
+                        <div className="text-xs text-muted-foreground">Traffic</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">+611%</div>
+                        <div className="text-xs text-muted-foreground">Leads</div>
+                      </div>
+                    </div>
+                    <Link to="/seo-case-study-1">
+                      <Button size="sm" className="w-full gap-2">
+                        <Eye size={14} />
+                        View Details
+                      </Button>
+                    </Link>
+                  </div>
+                </Card>
+
+                <Card className="overflow-hidden">
+                  <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 p-6 text-center">
+                    <ShoppingCart size={48} className="text-green-600 mx-auto mb-4" />
+                    <Badge variant="secondary" className="mb-2">E-commerce SEO</Badge>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3">Fashion E-commerce</h3>
+                    <p className="text-muted-foreground mb-4 text-sm">
+                      642% organic revenue growth for sustainable fashion store through e-commerce SEO.
+                    </p>
+                    <div className="flex justify-between items-center mb-4">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">+642%</div>
+                        <div className="text-xs text-muted-foreground">Revenue</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">+133%</div>
+                        <div className="text-xs text-muted-foreground">Conversion</div>
+                      </div>
+                    </div>
+                    <Link to="/seo-case-study-2">
+                      <Button size="sm" className="w-full gap-2">
+                        <Eye size={14} />
+                        View Details
+                      </Button>
+                    </Link>
+                  </div>
+                </Card>
+
+                <Card className="overflow-hidden">
+                  <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6 text-center">
+                    <MapPin size={48} className="text-purple-600 mx-auto mb-4" />
+                    <Badge variant="secondary" className="mb-2">Local SEO</Badge>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3">Healthcare Clinic</h3>
+                    <p className="text-muted-foreground mb-4 text-sm">
+                      561% increase in patient appointments through local SEO for healthcare clinic.
+                    </p>
+                    <div className="flex justify-between items-center mb-4">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">+561%</div>
+                        <div className="text-xs text-muted-foreground">Patients</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-green-600">89%</div>
+                        <div className="text-xs text-muted-foreground">Visibility</div>
+                      </div>
+                    </div>
+                    <Link to="/seo-case-study-3">
+                      <Button size="sm" className="w-full gap-2">
+                        <Eye size={14} />
+                        View Details
+                      </Button>
+                    </Link>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
